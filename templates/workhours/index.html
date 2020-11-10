@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if workhours %}
+
+{% for workhour in workhours %}
+
+<p>{{ workhour.name }}</p>
+<p>{{ workhour.code }}</p>
+
+{% endfor %}
+
+{% else %}
+
+No hay jornadas laborales
+
+{% endif %}
+
+
+
+{% endblock %}
