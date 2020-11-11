@@ -37,6 +37,7 @@ def edit(request, id):
 def update(request, id):
     workhour = Workhours.objects.get(id=id)
     form = WorkhourForm(request.POST, instance=workhour)
+    print(form.errors)
     if form.is_valid():
         form.save()
         return redirect("/show")

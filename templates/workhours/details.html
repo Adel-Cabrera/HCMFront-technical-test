@@ -2,12 +2,23 @@
 
 {% block content %}
 
+
 <div class="text-center">
-    <p><strong>Workday id:</strong> {{ workhour.id }}</p>
+    <h3>Work shift details</h3>
+</div>
 
-    <p><strong>Workday name:</strong> {{ workhour.name }}</p>
+<div class="text-center jumbotron jumbotron-fluid">
+    <p><strong>Work shift id:</strong> {{ workhour.id }}</p>
 
-    <p><strong>Workday code:</strong> {{ workhour.code }}</p>
+    <p><strong>Work shift name:</strong> {{ workhour.name }}</p>
+
+    <p><strong>Work shift starts from:</strong> {{ workhour.day_start }}</p>
+
+    <p><strong>Work shift ends in:</strong> {{ workhour.day_end }}</p>
+
+    <p><strong>Work hours starts at:</strong> {{ workhour.start }}</p>
+
+    <p><strong>Work hours ends at:</strong> {{ workhour.end }}</p>
 
     <a href="/show">Go back</a>
 

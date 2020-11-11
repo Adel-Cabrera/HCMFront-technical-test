@@ -4,20 +4,32 @@
 
 
 
+
 <table class="table table-striped table-bordered table-sm">
     <thead class="thead-dark">
         <tr>
-            <th>Workday Name</th>
-            <th>Workday Code</th>
+            <th>Workshift Name</th>
+            <th>Workshift Code</th>
+            <th>Workshift Days</th>
+            <th>Workshift Duration</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
 
+        {% if workhours %}
+
+        <div class="text-center mb-4">
+            <h3>ALL WORK SHIFTS</h3>
+        </div>
+
         {% for workhour in workhours %}
         <tr>
             <td><a href="/details/{{ workhour.id }}"> {{ workhour.name }}</a></td>
             <td>{{ workhour.code }}</td>
+            <td>{{ workhour.day_start }} | {{ workhour.day_end }}</td>
+            <td>{{ workhour.start }} | {{ workhour.end }}</td>
+
             <td>
                 <a href="/edit/{{ workhour.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a> |
                 <a href="/delete/{{ workhour.id }}">Delete</a>
@@ -25,12 +37,19 @@
         </tr>
         {% endfor %}
 
+        {% else %}
+
+        <div class="text-center mb-4">
+            <h3>NO RECORDS FOUND</h3>
+            <a href="/new" class="btn btn-info btn-sm">CREATE ONE</a>
+        </div>
+
+
+        {% endif %}
+
     </tbody>
+
 </table>
-<br>
-<br>
-
-
 
 
 {% endblock %}
