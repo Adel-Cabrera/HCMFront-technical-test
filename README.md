@@ -12,7 +12,7 @@ Main endpoint running locally:
 
 `http://127.0.0.1:8000/show`
 
-I used postgresql for this project. My only concern is about the database normalization and security of this webapp. But is working with all CRUD functionality.
+I used Django 3.1.3, Python 3.8.5 and Postgresql for this project. My only concern is about the database normalization and security of this webapp. But is working with all CRUD functionality.
 
 Also this repository has 2 branches, already merged into this current `main branch`.
 
