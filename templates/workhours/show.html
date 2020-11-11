@@ -16,7 +16,7 @@
 
         {% for workhour in workhours %}
         <tr>
-            <td>{{ workhour.name }}</td>
+            <td><a href="/details/{{ workhour.id }}"> {{ workhour.name }}</a></td>
             <td>{{ workhour.code }}</td>
             <td>
                 <a href="/edit/{{ workhour.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a> |

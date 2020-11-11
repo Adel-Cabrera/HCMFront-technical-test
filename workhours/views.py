@@ -24,6 +24,11 @@ def show(request):
     return render(request, "workhours/show.html", {'workhours': workhours})
 
 
+def details(request, id):
+    workhour = Workhours.objects.get(id=id)
+    return render(request, 'workhours/details.html', {'workhour': workhour})
+
+
 def edit(request, id):
     workhour = Workhours.objects.get(id=id)
     return render(request, 'workhours/edit.html', {'workhour': workhour})
