@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+        <tr>
+            <th>Workday Name</th>
+            <th>Workday Code</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for workhour in workhours %}
+        <tr>
+            <td>{{ workhour.name }}</td>
+            <td>{{ workhour.code }}</td>
+            <td>
+                <a href="/edit/{{ workhour.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a> |
+                <a href="/delete/{{ workhour.id }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+<br>
+<br>
+
+
+
+
+{% endblock %}
